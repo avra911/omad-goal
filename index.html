@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,18 +9,32 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,800;1,900&display=swap');
-        
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: #f1f5f9; /* bg-slate-100 */
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1f5f9;
+            /* bg-slate-100 */
         }
-        
+
         /* Custom Scrollbar for Tables */
-        .table-container::-webkit-scrollbar { height: 6px; }
-        .table-container::-webkit-scrollbar-track { background: #f8fafc; border-radius: 8px; }
-        .table-container::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 8px; }
-        .table-container::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
-        
+        .table-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .table-container::-webkit-scrollbar-track {
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 8px;
+        }
+
+        .table-container::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
         /* Mobile Menu Animation */
         #mobile-menu {
             transition: all 0.3s ease-in-out;
@@ -27,6 +42,7 @@
             opacity: 0;
             overflow: hidden;
         }
+
         #mobile-menu.open {
             max-height: 400px;
             opacity: 1;
@@ -38,12 +54,13 @@
         }
     </style>
 </head>
+
 <body class="text-slate-800 antialiased selection:bg-emerald-200 selection:text-emerald-900 text-sm">
 
     <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 py-3 transition-all shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                
+
                 <div class="flex items-center gap-2">
                     <a href="#">
                         <i class="fas fa-leaf text-emerald-500 text-lg"></i>
@@ -54,26 +71,44 @@
                 </div>
 
                 <div class="hidden md:flex space-x-2 lg:space-x-4 items-center">
-                    <a href="#tabel1" class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-[11px] uppercase tracking-wider font-bold transition-all">Matrix & Evoluție</a>
-                    <a href="#tabel2" class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-[11px] uppercase tracking-wider font-bold transition-all">Coș Săpt.</a>
-                    <a href="#tabel3" class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-[11px] uppercase tracking-wider font-bold transition-all">Estimat Sezamo</a>
-                    <a href="#tabel4" class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-[11px] uppercase tracking-wider font-bold transition-all">Preparare Pro</a>
+                    <a href="#tabel1"
+                        class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-[11px] uppercase tracking-wider font-bold transition-all">Matrix
+                        & Evoluție</a>
+                    <a href="#tabel2"
+                        class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-[11px] uppercase tracking-wider font-bold transition-all">Coș
+                        Săpt.</a>
+                    <a href="#tabel3"
+                        class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-[11px] uppercase tracking-wider font-bold transition-all">Estimat
+                        Sezamo</a>
+                    <a href="#tabel4"
+                        class="px-3 py-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 text-[11px] uppercase tracking-wider font-bold transition-all">Preparare
+                        Pro</a>
                 </div>
 
                 <div class="md:hidden flex items-center">
-                    <button id="mobile-btn" class="text-slate-600 hover:text-slate-900 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition">
+                    <button id="mobile-btn"
+                        class="text-slate-600 hover:text-slate-900 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition">
                         <i class="fas fa-bars text-xl"></i>
                     </button>
                 </div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="md:hidden bg-white absolute w-full left-0 border-b border-slate-200 shadow-xl z-40">
+        <div id="mobile-menu"
+            class="md:hidden bg-white absolute w-full left-0 border-b border-slate-200 shadow-xl z-40">
             <div class="px-4 py-3 flex flex-col space-y-1 pb-6">
-                <a href="#tabel1" class="mobile-link block px-4 py-3 rounded-lg text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-emerald-600 border-b border-slate-50 uppercase tracking-wide">Matrix & Evoluție</a>
-                <a href="#tabel2" class="mobile-link block px-4 py-3 rounded-lg text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-emerald-600 border-b border-slate-50 uppercase tracking-wide">Coș Săpt.</a>
-                <a href="#tabel3" class="mobile-link block px-4 py-3 rounded-lg text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-emerald-600 border-b border-slate-50 uppercase tracking-wide">Estimat Sezamo</a>
-                <a href="#tabel4" class="mobile-link block px-4 py-3 rounded-lg text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-emerald-600 uppercase tracking-wide">Preparare Pro</a>
+                <a href="#tabel1"
+                    class="mobile-link block px-4 py-3 rounded-lg text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-emerald-600 border-b border-slate-50 uppercase tracking-wide">Matrix
+                    & Evoluție</a>
+                <a href="#tabel2"
+                    class="mobile-link block px-4 py-3 rounded-lg text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-emerald-600 border-b border-slate-50 uppercase tracking-wide">Coș
+                    Săpt.</a>
+                <a href="#tabel3"
+                    class="mobile-link block px-4 py-3 rounded-lg text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-emerald-600 border-b border-slate-50 uppercase tracking-wide">Estimat
+                    Sezamo</a>
+                <a href="#tabel4"
+                    class="mobile-link block px-4 py-3 rounded-lg text-slate-700 font-bold text-sm hover:bg-slate-50 hover:text-emerald-600 uppercase tracking-wide">Preparare
+                    Pro</a>
             </div>
         </div>
     </nav>
@@ -84,15 +119,17 @@
                 OMAD <span class="text-emerald-400">VEGAN</span>
             </h1>
             <p class="text-slate-300 text-sm md:text-base font-medium tracking-wide">
-                Structură nutrițională completă: Media Consum România vs. <strong class="text-white font-bold border-b border-emerald-400 pb-0.5">Țintă Personală</strong>
+                Structură nutrițională completă: Media Consum România vs. <strong
+                    class="text-white font-bold border-b border-emerald-400 pb-0.5">Țintă Personală</strong>
             </p>
         </div>
     </header>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 relative z-20 mb-12">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            
-            <div class="bg-white rounded-2xl shadow-xl p-6 border border-slate-100 transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
+
+            <div
+                class="bg-white rounded-2xl shadow-xl p-6 border border-slate-100 transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Kcal Țintă</p>
                 <div class="flex items-baseline gap-1 mb-2">
                     <span class="text-4xl font-black text-slate-800 tracking-tight">~1.660</span>
@@ -100,7 +137,8 @@
                 <p class="text-[10px] font-bold text-emerald-500 italic uppercase">Protocol VTI/VPI</p>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-xl p-6 border border-slate-100 transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
+            <div
+                class="bg-white rounded-2xl shadow-xl p-6 border border-slate-100 transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Preț / Zi</p>
                 <div class="flex items-baseline gap-1 mb-2">
                     <span class="text-4xl font-black text-slate-800 tracking-tight">18,70</span>
@@ -109,7 +147,8 @@
                 <p class="text-[10px] font-bold text-slate-400 italic uppercase">Calcul Bulk</p>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-xl p-6 border border-slate-100 transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
+            <div
+                class="bg-white rounded-2xl shadow-xl p-6 border border-slate-100 transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full">
                 <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Total Lună</p>
                 <div class="flex items-baseline gap-1 mb-2">
                     <span class="text-4xl font-black text-slate-800 tracking-tight">~1.330</span>
@@ -118,11 +157,13 @@
                 <p class="text-[10px] font-bold text-amber-500 italic uppercase">Estimat Sezamo</p>
             </div>
 
-            <div class="bg-[#0f172a] rounded-2xl shadow-xl p-6 border border-slate-700 transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full relative overflow-hidden">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl -mr-10 -mt-10"></div>
+            <div
+                class="bg-[#0f172a] rounded-2xl shadow-xl p-6 border border-slate-700 transform hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between h-full relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl -mr-10 -mt-10">
+                </div>
                 <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2 relative z-10">Window</p>
                 <div class="flex items-baseline gap-1 mb-2 relative z-10">
-                    <span class="text-4xl font-black text-white tracking-tight">22:2</span>
+                    <span class="text-4xl font-black text-white tracking-tight">21:3</span>
                 </div>
                 <p class="text-[10px] font-bold text-emerald-400 italic uppercase relative z-10">Autophagy On</p>
             </div>
@@ -132,7 +173,8 @@
 
     <main class="max-w-7xl mx-auto px-4 pb-20 space-y-10 relative z-20">
 
-        <section id="tabel1" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden scroll-mt-24">
+        <section id="tabel1"
+            class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden scroll-mt-24">
             <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white">
                 <h2 class="text-lg font-black text-slate-800 flex items-center tracking-tight uppercase">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center mr-3">
@@ -143,117 +185,199 @@
             </div>
             <div class="table-container overflow-x-auto">
                 <table class="w-full text-left border-collapse min-w-[950px]">
-                    <thead class="bg-slate-50/80 text-slate-500 uppercase text-[10px] font-black tracking-widest border-b border-slate-200">
+
+                    <thead
+                        class="bg-slate-50/80 text-slate-500 uppercase text-[10px] font-black tracking-widest border-b border-slate-200">
                         <tr>
                             <th class="px-6 py-4 w-1/7">Categorie</th>
-                            <th class="px-6 py-4">Media României</th>
-                            <th class="px-6 py-4 text-slate-800 bg-slate-100/50 border-x border-slate-200">Țintă Personală</th>
+                            <th class="px-6 py-4">Media României (estimat)</th>
+                            <th class="px-6 py-4 text-slate-800 bg-slate-100/50 border-x border-slate-200">Țintă
+                                Personală</th>
                             <th class="px-6 py-4 text-center">Exces RO</th>
                             <th class="px-6 py-4 w-1/3">Strategie</th>
                             <th class="px-6 py-4 text-right">Preț/Zi</th>
                         </tr>
                     </thead>
+
                     <tbody class="divide-y divide-slate-100 text-[13px]">
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Cereale / făină</td>
-                            <td class="px-6 py-4 text-slate-500">410 g / 1.397 Kcal</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">120 g / 420 Kcal</td>
-                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+242%</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Cereale integrale (ovăz, quinoa, hrișcă). 40g ovăz + 40g quinoa + 40g hrișcă.</td>
+                            <td class="px-6 py-4 text-slate-500">300 g / 900 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                120 g / 420
+                                Kcal</td>
+                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+114%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Cereale integrale (ovăz, quinoa,
+                                hrișcă). 40g ovăz
+                                + 40g quinoa + 40g hrișcă.</td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~3,50</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Legume</td>
-                            <td class="px-6 py-4 text-slate-500">438 g / 153 Kcal</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">150 g / 50 Kcal</td>
-                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+192%</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">50g microplante + 50g broccoli + 50g morcov.</td>
+                            <td class="px-6 py-4 text-slate-500">300 g / 100 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                150 g / 50
+                                Kcal</td>
+                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+100%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">50g microplante + 50g broccoli + 50g
+                                morcov.</td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~2,00</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Fructe</td>
-                            <td class="px-6 py-4 text-slate-500">301 g / 151 Kcal</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">150 g / 80 Kcal</td>
-                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+101%</td>
+                            <td class="px-6 py-4 text-slate-500">200 g / 100 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                150 g / 80
+                                Kcal</td>
+                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+25%</td>
                             <td class="px-6 py-4 text-slate-600 leading-relaxed">100g afine + 50g mure + 1 măr mic.</td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~2,00</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Cartofi</td>
-                            <td class="px-6 py-4 text-slate-500">280 g / 224 Kcal</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">150 g / 120 Kcal</td>
-                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+87%</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Cartofi dulci/dovleac. 100g dulce + 50g dovleac.</td>
+                            <td class="px-6 py-4 text-slate-500">200 g / 160 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                150 g / 120
+                                Kcal</td>
+                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+33%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Cartofi dulci/dovleac. 100g dulce + 50g
+                                dovleac.
+                            </td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~1,00</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Leguminoase</td>
-                            <td class="px-6 py-4 text-slate-500">189 g / 473 Kcal</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">200 g / 350 Kcal</td>
-                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+45%</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Linte, năut, fasole. 100g linte + 100g năut fiert.</td>
+                            <td class="px-6 py-4 text-slate-500">60 g uscat / 180 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                200 g fiert
+                                / 350 Kcal</td>
+                            <td class="px-6 py-4 text-center text-emerald-500 font-bold bg-emerald-50/20">-49%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Linte, năut, fasole. 100g linte + 100g
+                                năut fiert.
+                            </td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~1,20</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Tofu / tempeh</td>
                             <td class="px-6 py-4 text-slate-300 italic">–</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">150 g / 180 Kcal</td>
-                            <td class="px-6 py-4 text-center text-slate-400">–</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Sursă proteică (VPI). 150g la grătar.</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                150 g / 180
+                                Kcal</td>
+                            <td class="px-6 py-4 text-center text-emerald-500 font-bold bg-emerald-50/20">-100%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Sursă proteică vegetală. 150g la
+                                grătar.</td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~5,00</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Semințe / nuci</td>
-                            <td class="px-6 py-4 text-slate-300 italic">–</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">30 g / 180 Kcal</td>
-                            <td class="px-6 py-4 text-center text-slate-400">–</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">10g nuci + 10g chia + 10g semințe in.</td>
+                            <td class="px-6 py-4 text-slate-500">15 g / 90 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                30 g / 180
+                                Kcal</td>
+                            <td class="px-6 py-4 text-center text-emerald-500 font-bold bg-emerald-50/20">-50%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">10g nuci + 10g chia + 10g semințe in.
+                            </td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~1,00</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Orez / Quinoa</td>
-                            <td class="px-6 py-4 text-slate-500">14 g / 48 Kcal</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">50 g / 180 Kcal</td>
-                            <td class="px-6 py-4 text-center text-emerald-500 font-bold bg-emerald-50/20">-72%</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Orez brun/quinoa. 25g quinoa + 25g orez brun.</td>
+                            <td class="px-6 py-4 text-slate-500">30 g / 105 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                50 g / 180
+                                Kcal</td>
+                            <td class="px-6 py-4 text-center text-emerald-500 font-bold bg-emerald-50/20">-42%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Orez brun / quinoa. 25g quinoa + 25g
+                                orez brun.
+                            </td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~0,60</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Ulei presat rece</td>
-                            <td class="px-6 py-4 text-slate-500">27 ml / 247 Kcal</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">10 ml / 90 Kcal</td>
-                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+170%</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Ulei măsline/in presat rece. Doar crud.</td>
+                            <td class="px-6 py-4 text-slate-500">30 ml / 270 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                10 ml / 90
+                                Kcal</td>
+                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+200%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Ulei măsline/in presat rece. Doar crud.
+                            </td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~0,50</td>
                         </tr>
+
                         <tr class="hover:bg-slate-50/80 transition-colors">
                             <td class="px-6 py-4 font-bold text-slate-800">Microplante</td>
                             <td class="px-6 py-4 text-slate-300 italic">–</td>
-                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">50 g / ~10 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                50 g / 10
+                                Kcal</td>
                             <td class="px-6 py-4 text-center text-slate-400">–</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Rucola, trifoi, broccoli. Densitate nutrițională.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Rucola, trifoi, broccoli. Densitate
+                                nutrițională.
+                            </td>
                             <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">~10,00</td>
                         </tr>
+
+                        <tr class="hover:bg-slate-50/80 transition-colors">
+                            <td class="px-6 py-4 font-bold text-slate-800">Carne</td>
+                            <td class="px-6 py-4 text-slate-500">200 g / 450 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                0 g / 0 Kcal
+                            </td>
+                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+100%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">-</td>
+                            <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">-</td>
+                        </tr>
+
+                        <tr class="hover:bg-slate-50/80 transition-colors">
+                            <td class="px-6 py-4 font-bold text-slate-800">Lactate</td>
+                            <td class="px-6 py-4 text-slate-500">300 g / 400 Kcal</td>
+                            <td class="px-6 py-4 font-bold text-emerald-700 bg-emerald-50/20 border-x border-slate-100">
+                                0 g / 0 Kcal
+                            </td>
+                            <td class="px-6 py-4 text-center text-red-500 font-bold bg-red-50/10">+100%</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">-</td>
+                            <td class="px-6 py-4 text-right font-mono font-medium text-slate-700">-</td>
+                        </tr>
+
                     </tbody>
+
                     <tfoot class="bg-slate-50 border-t-2 border-slate-200">
                         <tr>
-                            <td class="px-6 py-5 uppercase tracking-widest text-slate-900 text-xs font-black">Total / Zi</td>
-                            <td class="px-6 py-5 text-slate-500 text-[13px] font-medium">≈ 2.693 kcal (estimat RO)</td>
-                            <td class="px-6 py-5 font-black text-emerald-700 text-base border-x border-slate-200 bg-slate-100/80 shadow-inner">~1.660 Kcal</td>
-                            <td colspan="2" class="px-6 py-5 text-right font-bold text-slate-400 uppercase text-[10px] tracking-widest">Retail / Acasă:</td>
+                            <td class="px-6 py-5 uppercase tracking-widest text-slate-900 text-xs font-black">Total / Zi
+                            </td>
+                            <td class="px-6 py-5 text-slate-500 text-[13px] font-medium">≈ 2.755 Kcal</td>
+                            <td
+                                class="px-6 py-5 font-black text-emerald-700 text-base border-x border-slate-200 bg-slate-100/80 shadow-inner">
+                                ~1.660 Kcal</td>
+                            <td colspan="2"
+                                class="px-6 py-5 text-right font-bold text-slate-400 uppercase text-[10px] tracking-widest">
+                                Retail /
+                                Acasă:</td>
                             <td class="px-6 py-5 text-right text-slate-900 text-base font-black leading-tight">
                                 ~26,80 RON <br>
-                                <span class="text-[11px] text-emerald-600 font-bold block mt-1 uppercase tracking-wider bg-emerald-50 inline-block px-2 py-0.5 rounded">~18,70 RON (Bulk)</span>
+                                <span
+                                    class="text-[11px] text-emerald-600 font-bold block mt-1 uppercase tracking-wider bg-emerald-50 inline-block px-2 py-0.5 rounded">~18,70
+                                    RON (Bulk)</span>
                             </td>
                         </tr>
                     </tfoot>
+
                 </table>
             </div>
         </section>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
-            <section id="tabel2" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col scroll-mt-24">
+
+            <section id="tabel2"
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col scroll-mt-24">
                 <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white">
                     <h2 class="font-black text-slate-800 tracking-tight flex items-center uppercase text-sm">
                         <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center mr-3">
@@ -261,11 +385,13 @@
                         </div>
                         Coș Săptămânal OMAD
                     </h2>
-                    <span class="text-[9px] bg-slate-100 border border-slate-200 text-slate-500 px-2 py-1 rounded-md font-bold uppercase tracking-widest">Congelate</span>
+                    <span
+                        class="text-[9px] bg-slate-100 border border-slate-200 text-slate-500 px-2 py-1 rounded-md font-bold uppercase tracking-widest">Congelate</span>
                 </div>
                 <div class="table-container overflow-x-auto flex-grow">
                     <table class="w-full text-left border-collapse min-w-[450px]">
-                        <thead class="bg-slate-50/80 text-[10px] text-slate-500 font-black uppercase border-b border-slate-200 tracking-widest">
+                        <thead
+                            class="bg-slate-50/80 text-[10px] text-slate-500 font-black uppercase border-b border-slate-200 tracking-widest">
                             <tr>
                                 <th class="px-6 py-4">Produs</th>
                                 <th class="px-6 py-4">Cant. / Săpt.</th>
@@ -276,76 +402,104 @@
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Cereale (Ovăz, Quinoa, Hrișcă)</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">840g</td>
-                                <td class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">Nu</td>
+                                <td
+                                    class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">
+                                    Nu</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Legume bio (Broccoli, Morcov)</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">700g</td>
-                                <td class="px-6 py-3.5 text-center"><span class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span></td>
+                                <td class="px-6 py-3.5 text-center"><span
+                                        class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Microplante (Rucola, Germeni)</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">350g</td>
-                                <td class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">Nu</td>
+                                <td
+                                    class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">
+                                    Nu</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Fructe (Afine, Mure, Mere)</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">1,05kg</td>
-                                <td class="px-6 py-3.5 text-center"><span class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span></td>
+                                <td class="px-6 py-3.5 text-center"><span
+                                        class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Cartofi dulci / Dovleac</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">1,05kg</td>
-                                <td class="px-6 py-3.5 text-center"><span class="bg-amber-100 text-amber-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Tăiat</span></td>
+                                <td class="px-6 py-3.5 text-center"><span
+                                        class="bg-amber-100 text-amber-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Tăiat</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
-                                <td class="px-6 py-3.5 font-semibold text-slate-800">Leguminoase (Năut/Linte fierte)</td>
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Leguminoase (Năut/Linte fierte)
+                                </td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">1,4kg</td>
-                                <td class="px-6 py-3.5 text-center"><span class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span></td>
+                                <td class="px-6 py-3.5 text-center"><span
+                                        class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Tofu / Tempeh</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">1,05kg</td>
-                                <td class="px-6 py-3.5 text-center"><span class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span></td>
+                                <td class="px-6 py-3.5 text-center"><span
+                                        class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span>
+                                </td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Semințe / Nuci</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">210g</td>
-                                <td class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">Nu</td>
+                                <td
+                                    class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">
+                                    Nu</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Ulei de măsline (EVOO)</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">70g</td>
-                                <td class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">Nu</td>
+                                <td
+                                    class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">
+                                    Nu</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-500">Orez brun / Quinoa extra</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-500">350g</td>
-                                <td class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">Nu</td>
+                                <td
+                                    class="px-6 py-3.5 text-center text-slate-400 text-[11px] uppercase font-bold tracking-wider">
+                                    Nu</td>
                             </tr>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3.5 font-semibold text-slate-800">Fructe de pădure congelate</td>
                                 <td class="px-6 py-3.5 font-bold text-slate-900">700g</td>
-                                <td class="px-6 py-3.5 text-center"><span class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span></td>
+                                <td class="px-6 py-3.5 text-center"><span
+                                        class="bg-emerald-100 text-emerald-700 text-[10px] px-2 py-1 rounded font-bold uppercase">Da</span>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </section>
 
-            <section id="tabel3" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col scroll-mt-24">
+            <section id="tabel3"
+                class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col scroll-mt-24">
                 <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white">
                     <h2 class="font-black text-slate-800 tracking-tight flex items-center uppercase text-sm">
                         <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center mr-3">
                             <i class="fas fa-wallet text-slate-500"></i>
                         </div>
-                        Buget Sezamo <span class="text-slate-400 font-semibold ml-1.5 text-[11px] normal-case tracking-normal mt-0.5">(4 Săpt)</span>
+                        Buget Sezamo <span
+                            class="text-slate-400 font-semibold ml-1.5 text-[11px] normal-case tracking-normal mt-0.5">(4
+                            Săpt)</span>
                     </h2>
-                    <span class="text-[9px] bg-amber-50 text-amber-600 border border-amber-100 px-2 py-1 rounded-md font-bold uppercase tracking-widest">Prognoză</span>
+                    <span
+                        class="text-[9px] bg-amber-50 text-amber-600 border border-amber-100 px-2 py-1 rounded-md font-bold uppercase tracking-widest">Prognoză</span>
                 </div>
                 <div class="table-container overflow-x-auto flex-grow">
                     <table class="w-full text-left border-collapse min-w-[400px]">
-                        <thead class="bg-slate-50/80 text-[10px] text-slate-500 font-black uppercase border-b border-slate-200 tracking-widest">
+                        <thead
+                            class="bg-slate-50/80 text-[10px] text-slate-500 font-black uppercase border-b border-slate-200 tracking-widest">
                             <tr>
                                 <th class="px-6 py-4">Categorie Sezamo</th>
                                 <th class="px-6 py-4">Cant. / Lună</th>
@@ -353,21 +507,63 @@
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100 text-[13px] text-slate-700">
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-900">Fructe pădure Bio</td><td class="px-6 py-3.5">2.8 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">210-240</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-800">Mere (Vrac/Ro)</td><td class="px-6 py-3.5">~5 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">35-45</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-900">Tofu & Tempeh</td><td class="px-6 py-3.5">4.2 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">280-340</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-800">Microplante & Mix</td><td class="px-6 py-3.5">1.4 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">220-280</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-800">Cereale (Quinoa/Ovăz)</td><td class="px-6 py-3.5">~5 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">80-110</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-800">Legume Congelate</td><td class="px-6 py-3.5">~4 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">90-120</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-800">Leguminoase</td><td class="px-6 py-3.5">~3 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">50-70</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-800">Cartof Dulce / Dovleac</td><td class="px-6 py-3.5">~4.5 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">45-60</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-800">Nuci & Semințe (Mix)</td><td class="px-6 py-3.5">~1 kg</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">100-140</td></tr>
-                            <tr class="hover:bg-slate-50 transition-colors"><td class="px-6 py-3.5 font-semibold text-slate-800">Ulei măsline (Monini)</td><td class="px-6 py-3.5">1 sticlă</td><td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">60-90</td></tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-900">Fructe pădure Bio</td>
+                                <td class="px-6 py-3.5">2.8 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">210-240</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Mere (Vrac/Ro)</td>
+                                <td class="px-6 py-3.5">~5 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">35-45</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-900">Tofu & Tempeh</td>
+                                <td class="px-6 py-3.5">4.2 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">280-340</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Microplante & Mix</td>
+                                <td class="px-6 py-3.5">1.4 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">220-280</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Cereale (Quinoa/Ovăz)</td>
+                                <td class="px-6 py-3.5">~5 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">80-110</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Legume Congelate</td>
+                                <td class="px-6 py-3.5">~4 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">90-120</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Leguminoase</td>
+                                <td class="px-6 py-3.5">~3 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">50-70</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Cartof Dulce / Dovleac</td>
+                                <td class="px-6 py-3.5">~4.5 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">45-60</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Nuci & Semințe (Mix)</td>
+                                <td class="px-6 py-3.5">~1 kg</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">100-140</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 transition-colors">
+                                <td class="px-6 py-3.5 font-semibold text-slate-800">Ulei măsline (Monini)</td>
+                                <td class="px-6 py-3.5">1 sticlă</td>
+                                <td class="px-6 py-3.5 text-right font-mono font-bold text-slate-800">60-90</td>
+                            </tr>
                         </tbody>
                         <tfoot class="bg-slate-50 border-t-2 border-slate-200">
                             <tr>
-                                <td class="px-6 py-5 text-slate-900 font-black uppercase text-[11px] tracking-widest">Total Lunar Estimat</td>
-                                <td colspan="2" class="px-6 py-5 text-right text-lg font-black text-slate-800">~1.330 <span class="text-sm text-slate-500 font-bold ml-1">RON</span></td>
+                                <td class="px-6 py-5 text-slate-900 font-black uppercase text-[11px] tracking-widest">
+                                    Total Lunar Estimat</td>
+                                <td colspan="2" class="px-6 py-5 text-right text-lg font-black text-slate-800">~1.330
+                                    <span class="text-sm text-slate-500 font-bold ml-1">RON</span></td>
                             </tr>
                         </tfoot>
                     </table>
@@ -375,7 +571,8 @@
             </section>
         </div>
 
-        <section id="tabel4" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden scroll-mt-24">
+        <section id="tabel4"
+            class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden scroll-mt-24">
             <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-white">
                 <h2 class="text-lg font-black text-slate-800 tracking-tight flex items-center uppercase text-sm">
                     <div class="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center mr-3">
@@ -386,7 +583,8 @@
             </div>
             <div class="table-container overflow-x-auto">
                 <table class="w-full text-left border-collapse min-w-[800px]">
-                    <thead class="bg-slate-50/80 border-b border-slate-200 text-[10px] font-black text-slate-500 uppercase tracking-widest">
+                    <thead
+                        class="bg-slate-50/80 border-b border-slate-200 text-[10px] font-black text-slate-500 uppercase tracking-widest">
                         <tr>
                             <th class="px-6 py-4 w-16 text-center">Nr</th>
                             <th class="px-6 py-4 w-1/4">Produs</th>
@@ -397,57 +595,70 @@
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">01</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Cereale integrale</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Ovăz crud în overnight oats; quinoa/hrișcă fierte ușor 5–10 min și răcite; maximizează fibre și enzime.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Ovăz crud în overnight oats;
+                                quinoa/hrișcă fierte ușor 5–10 min și răcite; maximizează fibre și enzime.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">02</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Legume bio</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Majoritatea crude în salate; legume tari (broccoli) opțional aburite 2–3 min; evită prăjirea excesivă.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Majoritatea crude în salate; legume
+                                tari (broccoli) opțional aburite 2–3 min; evită prăjirea excesivă.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">03</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Microplante</td>
-                            <td class="px-6 py-4 text-emerald-700 font-bold bg-emerald-50/30 inline-block px-3 py-1 rounded mt-2 mb-2 ml-4">100% crude. Nu se fierb.</td>
+                            <td
+                                class="px-6 py-4 text-emerald-700 font-bold bg-emerald-50/30 inline-block px-3 py-1 rounded mt-2 mb-2 ml-4">
+                                100% crude. Nu se fierb.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">04</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Fructe</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Proaspete, spălate; fructe de pădure congelate dezghețate natural; evită sucurile procesate.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Proaspete, spălate; fructe de pădure
+                                congelate dezghețate natural; evită sucurile procesate.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">05</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Cartofi / Dovleac</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Fierte/coapte ușor; poți folosi airfryer 8–12 min la 180°C; evită prăjirea în baie de ulei.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Fierte/coapte ușor; poți folosi
+                                airfryer 8–12 min la 180°C; evită prăjirea în baie de ulei.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">06</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Leguminoase</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Fierte după înmuiere 8–12 ore; sau germinate 1–2 zile; a nu se consuma crude.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Fierte după înmuiere 8–12 ore; sau
+                                germinate 1–2 zile; a nu se consuma crude.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">07</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Tofu / tempeh</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Tofu crud moale sau prăjit ușor; tempeh la abur; evită procesarea intensă.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Tofu crud moale sau prăjit ușor; tempeh
+                                la abur; evită procesarea intensă.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">08</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Semințe / nuci</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Crude sau ușor prăjite la 40–50°C; pot fi hidratate peste noapte.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Crude sau ușor prăjite la 40–50°C; pot
+                                fi hidratate peste noapte.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">09</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Ulei de măsline</td>
-                            <td class="px-6 py-4 text-emerald-700 font-bold bg-emerald-50/30 inline-block px-3 py-1 rounded mt-2 mb-2 ml-4">Adăugat DUPĂ preparare, crud; evită încălzirea peste 120°C.</td>
+                            <td
+                                class="px-6 py-4 text-emerald-700 font-bold bg-emerald-50/30 inline-block px-3 py-1 rounded mt-2 mb-2 ml-4">
+                                Adăugat DUPĂ preparare, crud; evită încălzirea peste 120°C.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">10</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Orez / Quinoa extra</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Fiert ușor, răcit pentru rezistența la amidon; combinat cu verdețuri.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Fiert ușor, răcit pentru rezistența la
+                                amidon; combinat cu verdețuri.</td>
                         </tr>
                         <tr class="hover:bg-slate-50 transition-colors">
                             <td class="px-6 py-4 text-slate-400 text-center font-mono font-bold text-xs">11</td>
                             <td class="px-6 py-4 font-bold text-slate-800">Fructe de pădure</td>
-                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Dezghețate natural; consum ca atare; păstrează antioxidanții intacți.</td>
+                            <td class="px-6 py-4 text-slate-600 leading-relaxed">Dezghețate natural; consum ca atare;
+                                păstrează antioxidanții intacți.</td>
                         </tr>
                     </tbody>
                 </table>
@@ -462,7 +673,7 @@
                 <i class="fas fa-leaf text-slate-300"></i>
             </div>
             <span class="text-xs font-black text-slate-800 uppercase tracking-widest">OMAD Vegan Tracker</span>
-            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">2026  • EU</p>
+            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">2026 • EU</p>
         </div>
     </footer>
 
@@ -496,4 +707,5 @@
         });
     </script>
 </body>
+
 </html>
